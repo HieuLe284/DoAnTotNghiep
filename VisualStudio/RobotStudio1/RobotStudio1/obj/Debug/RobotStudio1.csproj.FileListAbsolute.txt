@@ -1,0 +1,85 @@
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe.config
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.pdb
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.AssemblyReference.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Form1.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Properties.Resources.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.GenerateResource.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CoreCompileInputs.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.exe
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.pdb
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio.Services.RobApi.Desktop.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio.Services.RobApi.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.xml
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CopyComplete
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe.config
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.pdb
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio.Services.RobApi.Desktop.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio.Services.RobApi.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.xml
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.AssemblyReference.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Form1.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Properties.Resources.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.GenerateResource.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CoreCompileInputs.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CopyComplete
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.exe
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.pdb
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe.config
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.pdb
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.dll
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio.Services.RobApi.Desktop.dll
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio.Services.RobApi.dll
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.xml
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.AssemblyReference.cache
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Form1.resources
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Properties.Resources.resources
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.RobotStudioGUI.resources
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.GenerateResource.cache
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CoreCompileInputs.cache
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CopyComplete
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.exe
+E:\Hieu\robotstudio\Đồ án\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.pdb
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.BiaHUST.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.RobotStudioGUI.resources
+E:\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe.config
+E:\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe
+E:\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.pdb
+E:\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.xml
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.AssemblyReference.cache
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.BiaHUST.resources
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Form1.resources
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Properties.Resources.resources
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.RobotStudioGUI.resources
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.GenerateResource.cache
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CoreCompileInputs.cache
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CopyComplete
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.exe
+E:\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.pdb
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe.config
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.exe
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio1.pdb
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio.Services.RobApi.Desktop.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\RobotStudio.Services.RobApi.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\ABB.Robotics.Controllers.PC.xml
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.AssemblyReference.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.BiaHUST.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Form1.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Properties.Resources.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.RobotStudioGUI.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.GenerateResource.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CoreCompileInputs.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.CopyComplete
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.exe
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.pdb
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.Matlab.resources
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\Interop.MLApp.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\obj\Debug\RobotStudio1.csproj.ResolveComReference.cache
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\MATLAB.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\MWArray.dll
+E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\App\Giao diện\Lê Minh Hiếu\VisualStudio\RobotStudio1\RobotStudio1\bin\Debug\MWArray.xml
