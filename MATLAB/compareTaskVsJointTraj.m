@@ -4,7 +4,7 @@
 %clc
 createWaypointData;
 figure, hold on
-plot3(waypoints(1,:),waypoints(2,:),waypoints(3,:),'ko:','LineWidth',2);
+plot3(waypoints(1,:),waypoints(2,:),waypoints(3,:),'-o','Color','b','MarkerSize',10,'MarkerFaceColor','#D9FFFF');
 title('Trajectory Waypoints'); 
 xlabel('X [m]');
 ylabel('Y [m]');
