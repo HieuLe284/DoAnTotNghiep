@@ -1,5 +1,0 @@
-E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Release\RobotStudio1.csproj.AssemblyReference.cache
-E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Release\RobotStudio1.Form1.resources
-E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Release\RobotStudio1.Properties.Resources.resources
-E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Release\RobotStudio1.csproj.GenerateResource.cache
-E:\Tủ sách\HUST\Đồ án\Đồ án tốt nghiệp cử nhân\ABB Robot\Giao diện\RobotStudio1\RobotStudio1\obj\Release\RobotStudio1.csproj.CoreCompileInputs.cache
