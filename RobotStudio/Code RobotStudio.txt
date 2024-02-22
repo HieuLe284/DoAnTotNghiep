@@ -1,0 +1,2498 @@
+MODULE Module1
+    !-----TARGET-----
+    !****************************** TOOL DATA ******************************
+    PERS tooldata tGripper:=[TRUE,[[0,0,72],[1,0,0,0]],[0.5,[0,0,1],[1,0,0,0],0,0,0]];
+    PERS tooldata tPen:=[TRUE,[[0.021476,40.8575,139.339],[1,0,0,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];
+    PERS tooldata tTeachingTip:=[TRUE,[[-2.42383,-0.717834,125.665],[1,0,0,0]],[0.5,[0.42,-0.036,34.116],[1,0,0,0],0,0,0]];
+    CONST tooldata toolAn:=[TRUE,[[16.6092,-2.543,125.374],[1,0,0,0]],[0.1,[0,0,0],[1,0,0,0],0,0,0]];
+
+    !****************************** WOBJ DATA ******************************
+    PERS wobjdata wobj1_Station:=[FALSE,TRUE,"",[[-53.2165,-412.784,223.545],[0.999989,-0.00467726,0.000158854,8.227E-05]],[[0,0,0],[1,0,0,0]]];
+    PERS wobjdata wobj2_PartTray:=[FALSE,TRUE,"",[[118.764,267.716,344.979],[0.00371243,0.00349998,0.988687,0.149908]],[[0,0,0],[0,0,1,0]]];
+    PERS wobjdata wobj3_PartFeeder:=[FALSE,TRUE,"",[[146.625,489.235,410.997],[0.674379,0.212635,0.21269,-0.674361]],[[0,0,0],[1,0,0,0]]];
+    PERS wobjdata Workobject_1:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[136.613,-481.291,228.595],[7.9825E-05,-0.00147428,0.999998,-0.000967317]]];
+
+
+    !****************************** ROBOT TARGET DATA ******************************
+    !---- Home
+    CONST robtarget pHome:=[[258.75,407.20,475.58],[0.00224341,-0.985477,0.0187797,0.168752],[-1,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !---- Process 1
+    CONST robtarget pP1_Appr:=[[-136.18,28.56,321.08],[0.00122099,0.697408,-0.716573,-0.0120052],[-2,-1,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP1_Wait:=[[-136.16,29.32,236.42],[0.00125472,0.697436,-0.716545,-0.011985],[-2,-1,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP1_Work1:=[[-142.68,5.47,106.72],[0.00355829,-0.706653,0.707544,0.00326729],[-2,-1,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP1_Work2:=[[-188.17,56.88,106.59],[0.00345073,-0.69753,0.71654,0.00325546],[-2,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !---- Process 2
+    CONST robtarget pP2_Appr:=[[82.24,51.52,324.75],[0.00349134,-0.723286,0.690533,0.00311791],[-1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP2_Wait:=[[81.21,77.68,208.81],[0.00173249,-0.721038,0.692893,-0.000379591],[-1,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP2_Work1:=[[169.88,73.14,2.2],[0.148171,-0.6964,0.684162,-0.158097],[-1,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP2_Work2:=[[90.94,73.15,2.4],[0.14815,-0.696382,0.684188,-0.158083],[-2,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP2_Work3:=[[-0.7,73.18,2.85],[0.148117,-0.696357,0.684222,-0.158074],[-2,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    VAR robtarget pP2_Work4:=[[141.39,42.83,19.06],[0.00163364,-0.697808,0.716272,0.00397692],[-1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP2_Work5:=[[135.19,39.87,20],[0.00176804,-0.697811,0.716268,0.00417076],[-1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP2_Work6:=[[166.51,74.86,5.16],[0.147833,-0.696653,0.684115,-0.157502],[-1,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP2_Work7:=[[88.50,74.79,5.16],[0.147769,-0.696623,0.68415,-0.157542],[-2,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP2_Work8:=[[7.47,73.95,5.10],[0.147761,-0.696614,0.684164,-0.157529],[-2,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !---- Process 3
+    CONST robtarget pP3_Appr:=[[386.73,407.91,330.84],[0.00467885,-0.999792,0.0198595,-0.000178183],[-1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP3_Wait1:=[[390.14,402.24,315.45],[0.00305028,-0.999959,0.00840933,-0.00112517],[-1,-1,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP3_Wait2:=[[423.54,490.81,278.79],[0.00433221,-0.947157,-0.320736,-0.0014803],[0,-1,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP3_Work1:=[[414.56,-35.00,122.59],[0.00493346,0.999966,0.00479465,0.00446059],[-1,-1,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP3_Work2:=[[412.04,496.83,124.13],[0.00312057,-0.690408,-0.723405,-0.00348359],[0,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !---- Process 4
+    CONST robtarget pP4_Appr:=[[238.84,717.43,331.03],[0.00403204,-0.879173,-0.476479,-0.00236812],[0,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP4_Wait:=[[238.82,717.39,223.54],[0.00457396,-0.999193,0.0399074,8.6614E-05],[0,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP4_Work1:=[[239.17,47.86,-14.76],[0.000191289,0.704096,0.710104,0.000209835],[0,-1,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP4_Work2:=[[-27.68,48.19,-9.55],[9.54736E-06,0.709667,0.704538,2.23142E-07],[0,-2,0,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !---- Process 5
+    CONST robtarget pP5_Appr:=[[92.40,762.75,340.92],[0.0124768,-0.756428,-0.65383,-0.0129413],[0,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Wait:=[[91.50,762.36,252.59],[0.128094,-0.745198,-0.644458,-0.113777],[0,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Work1:=[[-83.12,36.96,-17.62],[0.00444072,-0.754192,-0.656633,0.00276409],[0,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Work2:=[[-155.75,108.63,-17.62],[0.0044848,-0.754177,-0.65665,0.00274451],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Work3:=[[-85.02,182.38,-17.62],[0.00450225,-0.754182,-0.656644,0.00272647],[0,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Work4:=[[-12.11,108.74,-17.63],[0.00450703,-0.754183,-0.656643,0.00271852],[0,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Work5:=[[-48.51,72.54,-17.62],[0.00450321,-0.754183,-0.656643,0.00272472],[0,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Work6:=[[-121.04,72.53,-17.62],[0.00449965,-0.754185,-0.656641,0.00273559],[1,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Work7:=[[-121.04,145.19,-17.63],[0.00451324,-0.754184,-0.656642,0.00272476],[0,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP5_Work8:=[[-47.95,145.19,-17.62],[0.00451945,-0.754179,-0.656648,0.0027083],[0,0,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !---- Process 6
+    CONST robtarget pP6_Appr:=[[-72.69,740.63,343.23],[0.0166899,-0.581717,-0.813112,-0.0132666],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP6_Wait:=[[-54.95,724.93,297.40],[0.119701,-0.69988,-0.693227,-0.123593],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget pP6_Work1{8}:=[[[-184.10,204.74,-7.91],[0.000144363,0.705326,0.708883,-9.17339E-05],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-184.10,144.74,-7.91],[0.000144363,0.705326,0.708883,-9.17339E-05],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-184.10,84.74,-7.91],[0.000144363,0.705326,0.708883,-9.17339E-05],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-184.10,24.74,-7.91],[0.000144363,0.705326,0.708883,-9.17339E-05],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-244.10,204.74,-7.91],[0.000144363,0.705326,0.708883,-9.17339E-05],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-244.10,144.74,-7.91],[0.000144363,0.705326,0.708883,-9.17339E-05],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-244.10,84.74,-7.91],[0.000144363,0.705326,0.708883,-9.17339E-05],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-244.10,24.74,-7.91],[0.000144363,0.705326,0.708883,-9.17339E-05],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]]];
+    CONST robtarget pP6_Work2{8}:=[[[-306.62,203.12,-11.09],[0.00143788,0.713203,0.700956,-0.000302761],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-306.63,144.21,-7.40],[0.0015048,0.71315,0.70101,-0.000319167],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-307.51,83.94,-6.84],[0.00157515,0.713133,0.701027,-0.000314531],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-307.51,24.62,-8.52],[0.00161577,0.713083,0.701077,-0.000302007],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-367.09,204.25,-10.70],[0.00167988,0.71299,0.701172,-0.000310582],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-367.10,144.15,-10.12],[0.00168787,0.712992,0.70117,-0.000315803],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-367.10,84.17,-10.88],[0.00167746,0.713014,0.701148,-0.000308201],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[-367.70,24.61,-9.00],[0.00161245,0.71306,0.701102,-0.000317295],[1,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]]];
+
+    CONST robtarget D1:=[[-194.33,217.62,19.77],[0.036151,0.999272,0.0105121,-0.00620469],[1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget D2:=[[-18.74,817.21,159.77],[0.145772,-0.988774,0.00501219,0.0324296],[1,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget D3:=[[-18.53,759.33,146.56],[0.145756,-0.988776,0.00500798,0.0324261],[1,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget D4:=[[-18.86,702.02,122.73],[0.145652,-0.988793,0.00499184,0.0323993],[1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget D5:=[[-78.57,874.47,182.72],[0.145622,-0.988797,0.00502088,0.0323875],[1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget D6:=[[-79.27,818.21,162.58],[0.145583,-0.988803,0.00498857,0.0323839],[1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget D7:=[[-78.67,758.90,146.17],[0.14556,-0.988807,0.00497216,0.032371],[1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget D8:=[[-79.67,700.44,120.84],[0.145536,-0.988811,0.00494465,0.0323513],[1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+
+    CONST robtarget EXTREME:=[[68.82,64.7,160.68],[0.017639,-0.999214,0.0351977,0.00453589],[-1,-1,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !***********************************************************
+    !
+    ! Module:  Module1
+    !
+    ! Description:
+    !   <Insert description here>
+    !
+    ! Author: Le Hieu
+    !
+    ! Version: 1.0
+    !
+    !***********************************************************
+
+
+    !***********************************************************
+    !    _____________                _______________
+    !   |P1_ToolHolder|      ____    |               |
+    !   |_____________|    (  RB  )  |  P6_PartTray  |
+    !    __________          |__|    |_______________|
+    !   |          |         |__|    |               |
+    !   |          |         |  |    |  P5_PartTray  |
+    !   |    P2_   |          ||     |_______________|
+    !   |WhiteBoard|          <>     _________________
+    !   |          |                |  P4_PartFeeder  |
+    !   |__________|                |_________________|
+    !    ______________________________________________
+    !   |                 P3_Conveyor                  |
+    !   |______________________________________________|
+    !***********************************************************
+
+    !----- VISUAL STUDIO DATA ----
+    CONST num SHUT_DOWN:=-1;
+    CONST num TO_WAIT:=0;
+    CONST num TO_PAINT:=1;
+    CONST num TO_INTRODUCE:=2;
+    CONST num Project1:=3;
+    CONST num Project2:=4;
+    CONST num Project3:=5;
+    CONST num Project4:=6;
+    CONST num Project5:=7;
+    CONST num Project6:=8;
+    CONST num Project7:=9;
+    CONST num Project8:=10;
+    CONST num Project9:=11;
+    CONST num Project10:=12;
+    PERS num flag:=-1;
+    VAR bool repeat:=TRUE;
+
+    PERS num box:=18;
+    CONST num Rectangle:=14;
+    CONST num Rectangle1:=15;
+    CONST num Rectangle2:=16;
+    CONST num Rectangle3:=17;
+    CONST num Rectangle4:=18;
+    CONST num Rectangle5:=19;
+    CONST num Rectangle6:=20;
+    CONST num Rectangle7:=21;
+    CONST num Rectangle8:=22;
+    CONST num Circle:=23;
+    CONST num Circle1:=24;
+    CONST num Circle2:=25;
+    CONST num Circle3:=26;
+    CONST num Circle4:=27;
+    CONST num Circle5:=28;
+    CONST num Circle6:=29;
+    CONST num Circle7:=30;
+    CONST num Circle8:=31;
+
+    !----- SPEED DATA ----
+    VAR num speed:=0;
+    VAR speeddata drawingSpeed;
+    VAR num speedLevel:=0;
+    VAR speeddata vFast:=v500;
+    VAR speeddata vMid:=v300;
+    VAR speeddata vSlow:=v100;
+    VAR speeddata vWork:=v50;
+
+    !----- TARGET DATA ----
+    PERS pos tgPos{500};
+    VAR num targetsNum;
+    VAR robtarget pRB_Current;
+    VAR intnum intStop;
+
+    !----- INTERUPT DATA ----
+    PERS string stJobStat;
+    PERS string stJobDecrip1;
+    PERS string stJobDecrip2;
+
+    !----- BOOLEAN DATA ----
+    VAR bool bSkipProcess;
+    PERS bool bStartJob;
+    PERS bool bStopJob;
+
+    !----- NUM DATA -----
+    PERS num nRB_SpeedRatio;
+    PERS num nRB_Position;
+    VAR num nWork_Position;
+    PERS num nExercise;
+    PERS num nJob;
+    PERS num nStep;
+
+    !----- MATLAB DATA -----
+    VAR socketdev server;
+    VAR socketdev client;
+    VAR string message;
+    VAR string str;
+    VAR rawbytes data;
+    VAR pos pos1;
+    VAR pos pos2;
+    VAR pos pos3;
+    VAR pos pos4;
+    VAR pos pos5;
+    VAR pos pos6;
+    VAR pos pos7;
+    VAR pos pos8;
+    VAR pos pos9;
+    VAR pos pos10;
+    VAR pos pos11;
+    VAR pos pos12;
+    VAR pos pos13;
+    VAR pos pos14;
+    VAR pos pos15;
+    VAR pos pos16;
+    VAR pos pos17;
+    VAR pos pos18;
+    VAR pos pos19;
+    VAR pos pos20;
+    VAR pos pos21;
+    VAR pos pos22;
+    VAR pos pos23;
+
+    !Process 1
+    VAR bool bP1_Condition;
+    VAR bool bP1_Permis1;
+    VAR bool bP1_Permis2;
+    VAR bool bP1_Permis3;
+    VAR bool bP1_Permis4;
+    !Process 2
+    VAR bool bP2_Condition;
+    VAR bool bP2_Permis1;
+    VAR bool bP2_Permis2;
+    VAR bool bP2_Permis3;
+    VAR bool bP2_Permis4;
+    VAR bool bP2_Permis5;
+    !Process 3
+    VAR bool bP3_Condition;
+    VAR bool bP3_Permis1;
+    VAR bool bP3_Permis2;
+    !Process 4
+    VAR bool bP4_Condition;
+    VAR bool bP4_Permis1;
+    VAR bool bP4_Permis2;
+    !Process 5
+    VAR bool bP5_Condition;
+    VAR bool bP5_Permis1;
+    VAR bool bP5_Permis2;
+    VAR bool bP5_Permis3;
+    !Process 6
+    VAR bool bP6_Condition;
+    VAR bool bP6_Permis1;
+    VAR bool bP6_Permis2;
+    VAR bool bP6_Permis3;
+    PERS wobjdata wobjtray:=[FALSE,TRUE,"",[[122.142,260.212,319.063],[0.988698,0.149877,-0.00342613,-0.00119367]],[[0,0,0],[1,0,0,0]]];
+    CONST robtarget Dhome:=[[186.10,-170.78,368.57],[0.140258,0.818432,-0.556629,0.0256824],[-1,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+
+    VAR robtarget PlacePointvar;
+
+    !Tao target
+    FUNC robtarget create_robtarget(pos position)
+        RETURN [position,[0.707106781,0,0,0.707106781],[1,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+    ENDFUNC
+
+    !Dieu chinh toc do khi ve
+    FUNC speeddata shifting(num base)
+        IF base=0 THEN
+            RETURN v100;
+        ELSEIF base=1 THEN
+            RETURN v300;
+        ELSEIF base=2 THEN
+            RETURN v600;
+        ELSE
+            RETURN v1000;
+        ENDIF
+    ENDFUNC
+
+    !Dieu chinh toc do
+    FUNC speeddata SpeedRation(Var num S)
+        IF S=5 THEN
+            RETURN v5;
+        ELSEIF S=10 THEN
+            RETURN v10;
+        ELSEIF S=20 THEN
+            RETURN v20;
+        ELSEIF S=30 THEN
+            RETURN v30;
+        ELSEIF S=40 THEN
+            RETURN v40;
+        ELSEIF S=50 THEN
+            RETURN v50;
+        ELSEIF S=60 THEN
+            RETURN v60;
+        ELSEIF S=80 THEN
+            RETURN v80;
+        ELSEIF S=100 THEN
+            RETURN v100;
+        ELSEIF S=150 THEN
+            RETURN v150;
+        ELSEIF S=200 THEN
+            RETURN v200;
+        ELSEIF S=300 THEN
+            RETURN v300;
+        ELSEIF S=400 THEN
+            RETURN v400;
+        ELSEIF S=500 THEN
+            RETURN v500;
+        ELSEIF S=600 THEN
+            RETURN v600;
+        ELSEIF S=800 THEN
+            RETURN v800;
+        ELSEIF S=1000 THEN
+            RETURN v1000;
+        ELSEIF S=1500 THEN
+            RETURN v1500;
+        ELSEIF S=2000 THEN
+            RETURN v2000;
+        ELSEIF S=2500 THEN
+            RETURN v2500;
+        ELSEIF S=3000 THEN
+            RETURN v3000;
+        ELSEIF S=4000 THEN
+            RETURN v4000;
+        ELSEIF S=5000 THEN
+            RETURN v5000;
+        ELSEIF S=6000 THEN
+            RETURN v6000;
+        ELSEIF S=7000 THEN
+            RETURN v7000;
+        ELSE
+            RETURN v100;
+        ENDIF
+    ENDFUNC
+
+    ! Khoi tao bien
+    FUNC bool init()
+        drawingSpeed:=shifting(speedLevel);
+        targetsNum:=0;
+        repeat:=TRUE;
+        !flag := 0;
+        RETURN TRUE;
+    ENDFUNC
+
+    ! Qua trinh ve
+    PROC EX_PAINT()
+        VAR num i:=2;
+        drawingSpeed:=shifting(speedLevel);
+        ConfL\Off;
+
+        ! Tiep can P2_WhiteBoard voi toc do v600
+        MoveL create_robtarget(tgPos{1}),shifting(2),z100,tPen\WObj:=Workobject_1;
+        ! Qua trinh lap lai lien tuc de ve tung diem
+        WHILE repeat DO
+            MoveL create_robtarget(tgPos{i}),drawingSpeed,z100,tPen\WObj:=Workobject_1;
+            i:=i+1;
+            IF i>targetsNum THEN
+                repeat:=FALSE;
+            ENDIF
+        ENDWHILE
+
+        flag:=TO_WAIT;
+        repeat:=TRUE;
+        i:=2;
+        ! Dat TCP la diem ban dau
+        MoveL EXTREME,shifting(2),z100,tPen\WObj:=Workobject_1;
+
+    ENDPROC
+
+    ! Truong hop khac
+    PROC EX_INTRODUCING()
+        flag:=TO_WAIT;
+    ENDPROC
+
+    ! Khoi dong he thong
+    PROC rInitial()
+        IF (nRB_SpeedRatio>0) AND (nRB_SpeedRatio<=100) THEN
+            AccSet 50,50;
+            ! Giam toc do va gia toc cua robot xuong con 50%
+            VelSet nRB_SpeedRatio,800;
+            ! Giam toc do xuong nRB_SpeedRatio(%) gia tri va gioi han toc do toi da la 800
+        ELSE
+            ! Truong hop robot o ngoai vung kiem soat
+            TPWrite "RB: WRONG speed ratio set!";
+            stJobStat:="WRONG speed ratio set!";
+            stJobDecrip1:="Speed ratio must be >0 and <=100";
+            WaitTime 0.5;
+            Stop;
+        ENDIF
+
+        !----- Reset Output -----
+        Set Do00_Pneumatic;
+        Reset Do01_GreenLamp;
+        Reset Do02_RedLamp;
+        Reset Do03_YellowLamp;
+        Reset Do04_TowerRedLamp;
+        Reset Do05_TowerYellowLamp;
+        Reset Do06_TowerGreenLamp;
+        Reset Do07_TowerBuzzer;
+        Set Do08_ValveGripper;
+        Reset Do09_MotorFoward;
+        Reset Do10_MotorReverse;
+        Reset Do11_ValveHolding;
+
+        !----- Reset other data -----
+        nWork_Position:=0;
+        nStep:=1;
+        bStartJob:=FALSE;
+    ENDPROC
+
+    !Reset lai toan bo he thong ve 0
+    PROC rResetCondition()
+        IF flag<>12 THEN
+            ! Tat IO bang tai neu nhu khong phai bai 10
+            Reset do09_MotorFoward;
+        ENDIF
+
+        !----- Process 1 -----
+        bP1_Condition:=FALSE;
+        bP1_Permis1:=FALSE;
+        bP1_Permis2:=FALSE;
+        bP1_Permis3:=FALSE;
+        bP1_Permis4:=FALSE;
+
+        !----- Process 2 -----
+        bP2_Condition:=FALSE;
+        bP2_Permis1:=FALSE;
+        bP2_Permis2:=FALSE;
+        bP2_Permis3:=FALSE;
+        bP2_Permis4:=FALSE;
+        bP2_Permis5:=FALSE;
+
+        !----- Process 3 -----
+        bP3_Condition:=FALSE;
+        bP3_Permis1:=FALSE;
+        bP3_Permis2:=FALSE;
+
+        !----- Process 4 -----
+        bP4_Condition:=FALSE;
+        bP4_Permis1:=FALSE;
+        bP4_Permis2:=FALSE;
+
+        !----- Process 5 -----
+        bP5_Condition:=FALSE;
+        bP5_Permis1:=FALSE;
+        bP5_Permis2:=FALSE;
+        bP5_Permis3:=FALSE;
+
+        !----- Process 6 -----
+        bP6_Condition:=FALSE;
+        bP6_Permis1:=FALSE;
+        bP6_Permis2:=FALSE;
+
+        bStartJob:=FALSE;
+
+    ENDPROC
+
+    !Dieu khien TCP
+    PROC rTool(string Tool_Control)
+        VAR bool bTimeOut;
+        IF Tool_Control="Gripper_ON" THEN
+            ! Gripper ON
+            SetDO do08_ValveGripper,0;
+            WaitUntil di06_GripperOn=1\MaxTime:=2\TimeFlag:=bTimeOut;
+            IF bTimeOut THEN
+                TPWrite "Tool: Gripper NOT ON!";
+                WaitTime 0.5;
+                Stop;
+            ENDIF
+        ELSEIF Tool_Control="Gripper_OFF" THEN
+            ! Gripper OFF
+            SetDO do08_ValveGripper,1;
+            WaitUntil di07_GripperOFF=1\MaxTime:=2\TimeFlag:=bTimeOut;
+            IF bTimeOut THEN
+                TPWrite "Tool: Gripper NOT OFF!";
+                WaitTime 0.5;
+                Stop;
+            ENDIF
+        ELSEIF Tool_Control="Holding_ON" THEN
+            ! Gripper ON
+            SetDO do11_ValveHolding,1;
+            WaitUntil di09_HoldingOn=1\MaxTime:=2\TimeFlag:=bTimeOut;
+            IF bTimeOut THEN
+                TPWrite "Tool: Holding NOT ON!";
+                WaitTime 0.5;
+                Stop;
+            ENDIF
+        ELSEIF Tool_Control="Holding_OFF" THEN
+            ! Holding OFF
+            SetDO do11_ValveHolding,0;
+            WaitUntil di10_HoldingOff=1\MaxTime:=2\TimeFlag:=bTimeOut;
+            IF bTimeOut THEN
+                TPWrite "Tool: Holding NOT OFF!";
+                WaitTime 0.5;
+                Stop;
+            ENDIF
+        ELSE
+            TPWrite "Tool: rTool() string is WRONG!";
+            WaitTime 0.5;
+            Stop;
+        ENDIF
+    ENDPROC
+
+    !Kiem tra xem dang co Tool nao dung khong
+    PROC rToolCheck(string Tool_Check)
+        WaitTime 0.2;
+        IF Tool_Check="Gripper_ON" THEN
+            IF di06_GripperOn=0 THEN
+                TPWrite "Tool Check: Gripper NOT ON!";
+                WaitTime 0.5;
+                Stop;
+            ENDIF
+        ELSEIF Tool_Check="Gripper_OFF" THEN
+            IF di07_GripperOff=0 THEN
+                TPWrite "Tool Check: Gripper NOT OFF!";
+                WaitTime 0.5;
+                Stop;
+            ENDIF
+        ELSEIF Tool_Check="Holding_ON" THEN
+            IF di09_HoldingOn=0 THEN
+                TPWrite "Tool Check: Holding NOT ON!";
+                WaitTime 0.5;
+                Stop;
+            ENDIF
+        ELSEIF Tool_Check="Holding_OFF" THEN
+            IF di10_HoldingOff=0 THEN
+                TPWrite "Tool Check: Holding NOT OFF!";
+                WaitTime 0.5;
+                Stop;
+            ENDIF
+        ELSE
+            TPWrite "Tool: rToolCheck() string is WRONG!";
+            WaitTime 0.5;
+            Stop;
+        ENDIF
+    ENDPROC
+
+
+    ! Cho Robot ve vi tri Home
+    PROC rHome()
+        pRB_Current:=CRobT(\Tool:=tGripper\WObj:=wobj1_Station);
+
+        ! Robot di chuyen ve vi tri Home P3_Approach
+        IF (nRB_Position=10) THEN
+            ! From Home
+            MoveL pRB_Current,vSlow,z10,tGripper\WObj:=wobj1_Station;
+            MovEJ pHome,vMid,z50,tGripper\WObj:=wobj1_Station;
+            !Update Position Matlab
+            !            pos1:=CPos(\Tool:=tool0\WObj:=wobj0);
+            !            SocketSend client,\str:=ValtoStr(pos1)+"@";
+            ! Update RB Position
+            nRB_Position:=10;
+        ELSEIF (nRB_Position=100) THEN
+            ! From P1
+            pRB_Current:=CRobT(\Tool:=tGripper\WObj:=wobj1_Station);
+            MoveL Offs(pRB_Current,0,0,50),vSlow,z10,tGripper\WObj:=wobj1_Station;
+            MoveJ pP1_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pHome,vMid,z50,tGripper\WObj:=wobj1_Station;
+            ! Update RB Position
+            nRB_Position:=10;
+        ELSEIF (nRB_Position=200) THEN
+            ! From P2
+            pRB_Current:=CRobT(\Tool:=tGripper\WObj:=wobj1_Station);
+            MoveL Offs(pRB_Current,0,0,50),vSlow,z10,tGripper\WObj:=wobj1_Station;
+            MoveJ pP2_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pHome,vMid,z50,tGripper\WObj:=wobj1_Station;
+            ! Update RB Position
+            nRB_Position:=10;
+        ELSEIF (nRB_Position=300) THEN
+            ! From P3
+            pRB_Current:=CRobT(\Tool:=tGripper\WObj:=wobj1_Station);
+            MoveL Offs(pRB_Current,0,0,50),vSlow,z10,tGripper\WObj:=wobj1_Station;
+            MoveJ pP3_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pHome,vMid,z50,tGripper\WObj:=wobj1_Station;
+            ! Update RB Position
+            nRB_Position:=10;
+        ELSEIF (nRB_Position=400) THEN
+            ! From P4
+            pRB_Current:=CRobT(\Tool:=tGripper\WObj:=wobj3_PartFeeder);
+            MoveL Offs(pRB_Current,0,0,50),vSlow,z10,tGripper\WObj:=wobj3_PartFeeder;
+            MoveJ pP4_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pHome,vMid,z50,tGripper\WObj:=wobj1_Station;
+            ! Update RB Position
+            nRB_Position:=10;
+        ELSEIF (nRB_Position=500) THEN
+            ! From P5
+            pRB_Current:=CRobT(\Tool:=tGripper\WObj:=wobj2_PartTray);
+            MoveL Offs(pRB_Current,0,0,50),vSlow,z10,tGripper\WObj:=wobj2_PartTray;
+            MoveJ pP5_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pHome,vMid,z50,tGripper\WObj:=wobj1_Station;
+            ! Update RB Position
+            nRB_Position:=10;
+        ELSEIF (nRB_Position=600) THEN
+            ! From P6
+            pRB_Current:=CRobT(\Tool:=tGripper\WObj:=wobj2_PartTray);
+            MoveL Offs(pRB_Current,0,0,50),vSlow,z10,tGripper\WObj:=wobj2_PartTray;
+            MoveJ pP6_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pHome,vMid,z50,tGripper\WObj:=wobj1_Station;
+            ! Update RB Position
+            nRB_Position:=10;
+        ELSE
+            ! Truong hop robot o ngoai vung kiem soat
+            TPWrite "nRB_Position Wrong";
+            stJobStat:="WRONG robot position!";
+            stJobDecrip1:="P1_ToolHolder<=>100, P2_WhiteBoard:=200, P3_Conveyor<=>300";
+            stJobDecrip2:="P4_PartFeeder<=>400, P5_PartTray<=>500, P6_PartTray<=>600";
+            StopMove;
+            Stop;
+        ENDIF
+    ENDPROC
+
+    !TRAP routines
+    TRAP iStop
+        ISleep intStop;
+        ! vo hieu hoa tam thoi intStop
+        Reset do11_ValveHolding;
+        StopMove\Quick;
+        ! Dung qua trinh trinh chuyen dong cua robot
+        WaitDI di08_PhotoSensor,0;
+        WaitTime 0.5;
+        Set do11_ValveHolding;
+        WaitTime 0.5;
+        StartMove;
+        ! tiep tuc qua trinh chuyen dong cua robot
+        IWatch intStop;
+        ! Bat lai bien intStop vua vo hieu hoa
+        RETURN ;
+    ENDTRAP
+
+    PROC rCallTrapStop()
+        WaitDI di08_PhotoSensor,0;
+        IDelete intStop;
+        ! Huy trang thai ngat
+        CONNECT intStop WITH iStop;
+        ! Ket noi voi TRAP routines
+        ISignalDI di08_PhotoSensor,1,intStop;
+        IWatch intStop;
+        RETURN ;
+    ENDPROC
+
+    PROC rP1_RunP1()
+        !--Robot work at Process 1
+        TPWrite "P1: RB goto P1";
+        !--Move to P1
+        rP1_GoToP1;
+        pos2:=CPos(\Tool:=tool0\WObj:=wobj0);
+        SocketSend client,\str:=ValtoStr(pos2)+"@";
+        MoveL pP1_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        pos3:=CPos(\Tool:=tool0\WObj:=wobj0);
+        SocketSend client,\str:=ValtoStr(pos3)+"@";
+
+        !--Wait Permision
+        WaitUntil bSkipProcess OR bP1_Permis1 OR bP1_Permis2 OR bP1_Permis3 OR bP1_Permis3 OR bP1_Permis4;
+        !-- Skip process
+        IF bSkipProcess THEN
+            TPWrite "P1: Skip P1";
+            GOTO GOTO_P1_END;
+        ENDIF
+        !-- Mission1: Pick Pentool
+        IF bP1_Permis1 THEN
+            MoveL Offs(pP1_Work1,0,0,60),vMid,z20,tGripper\WObj:=wobj1_Station;
+            rToolCheck "Gripper_OFF";
+            MoveL pP1_Work1,vWork,fine,tGripper\WObj:=wobj1_Station;
+            !Update Position Matlab
+            rTool "Gripper_ON";
+            rToolCheck "Gripper_ON";
+            MoveL Offs(pP1_Work1,0,0,80),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission2: Pick TeachingTip
+        IF bP1_Permis2 THEN
+            MoveL Offs(pP1_Work2,0,0,60),vMid,z20,tGripper\WObj:=wobj1_Station;
+
+            pos4:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos4)+"@";
+            rToolCheck "Gripper_OFF";
+            MoveL pP1_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+
+            pos5:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos5)+"@";
+            !Update Position Matlab
+            rTool "Gripper_ON";
+            rToolCheck "Gripper_ON";
+            MoveL Offs(pP1_Work2,0,0,80),vSlow,z20,tGripper\WObj:=wobj1_Station;
+
+            pos6:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos6)+"@";
+            MoveL pP1_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+
+            pos7:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos7)+"@";
+        ENDIF
+        !-- Mission3: Place Pentool
+        IF bP1_Permis3 THEN
+            MoveL Offs(pP1_Work1,0,0,100),vMid,z10,tGripper\WObj:=wobj1_Station;
+            rToolCheck "Gripper_ON";
+            MoveL pP1_Work1,vWork,fine,tGripper\WObj:=wobj1_Station;
+            !Update Position Matlab
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP1_Work1,0,0,20),vSlow,z10,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission4: Place TeachingTip
+        IF bP1_Permis4 THEN
+            MoveL Offs(pP1_Work2,0,0,60),vMid,z20,tTeachingTip\WObj:=wobj1_Station;
+            rToolCheck "Gripper_ON";
+            MoveL pP1_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            !Update Position Matlab
+            pos21:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos21)+"@";
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP1_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            pos22:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos22)+"@";
+        ENDIF
+        !-- END process
+        GOTO_P1_END:
+        MoveL pP1_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        MoveL pP1_Appr,vFast,z20,tGripper\WObj:=wobj1_Station;
+        nRB_Position:=100;
+        TPWrite "P1: RB finish P1";
+        nStep:=nStep+1;
+        bP1_Condition:=FALSE;
+    ENDPROC
+
+    PROC rP1_GoToP1()
+        !*** Robot move to P1 Approach position
+        IF (nRB_Position=10) THEN
+            ! From Home
+            MoveL pHome,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=100) THEN
+            ! From P1
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=200) THEN
+            ! From P2
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=300) THEN
+            ! From P3
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=400) THEN
+            ! From P4
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=500) THEN
+            ! From P5
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=600) THEN
+            ! From P6
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSE
+            ! Robot out of zone
+            TPWrite "nRB_Position Wrong";
+            StopMove;
+        ENDIF
+        ! Update RB Position
+        nRB_Position:=100;
+    ENDPROC
+
+    PROC rP2_RunP2()
+        !--Robot work at Process 2
+        TPWrite "P2: RB goto P2";
+        !--Move to P2
+        rP2_GoToP2;
+        MoveL pP2_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        !--Wait Permision
+        WaitUntil bSkipProcess OR bP2_Permis1 OR bP2_Permis2 OR bP2_Permis3 OR bP2_Permis4 OR bP2_Permis5;
+        !-- Skip process
+        IF bSkipProcess THEN
+            TPWrite "P2: Skip P2";
+            GOTO GOTO_P2_END;
+        ENDIF
+        !        -- Mission1: Write letter "ABB"
+        IF bP2_Permis1 THEN
+            !---- Write letter "A" ----
+            MoveL Offs(pP2_Work1,-20,0,20),vMid,z50,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL Offs(pP2_Work1,-20,0,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-50,-100,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-80,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-35,-50,50),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-35,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-65,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            !---- Write letter "B" ----
+            MoveL Offs(pP2_Work2,-20,0,30),vMid,z20,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL Offs(pP2_Work2,-20,0,0),vMid,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work2,-20,-100,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work2,-30,-100,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work2,-55,-75,0),Offs(pP2_Work2,-30,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work2,-20,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work2,-30,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work2,-55,-25,0),Offs(pP2_Work2,-30,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work2,-20,0,0),vMid,fine,tPen\WObj:=wobj1_Station;
+            !---- Write letter "B" ----
+            MoveL Offs(pP2_Work3,30,0,30),vMid,z20,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL Offs(pP2_Work3,30,0,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,30,-100,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,20,-100,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work3,-5,-75,0),Offs(pP2_Work3,20,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,30,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,20,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work3,-5,-25,0),Offs(pP2_Work3,20,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,30,0,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission2: Write letter "1", "2", "3"
+        IF bP2_Permis2 THEN
+            !---- Write letter "1" ----
+            MoveL Offs(pP2_Work1,0,-70,50),vMid,fine,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL Offs(pP2_Work1,0,-70,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-30,-100,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-30,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,0,0,50),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL pP2_Work1,vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-60,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            !---- Write letter "2" ----
+            MoveL Offs(pP2_Work2,0,-70,50),vMid,fine,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL Offs(pP2_Work2,0,-70,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work2,-30,-100,0),Offs(pP2_Work2,-60,-70,0),vWork,z100,tPen\WObj:=wobj1_Station;
+            MoveL pP2_Work2,vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work2,-60,0,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+            !---- Write letter "3" ----
+            MoveL Offs(pP2_Work3,30,-100,50),vMid,fine,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL Offs(pP2_Work3,30,-100,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,20,-100,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work3,-5,-75,0),Offs(pP2_Work3,20,-50,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work3,-5,-25,0),Offs(pP2_Work3,20,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,30,0,0),vMid,fine,tPen\WObj:=wobj1_Station;
+            MoveL pP2_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission3: Draw a "Square", "Circle", "Triangle"
+        IF bP2_Permis3 THEN
+            !---- Draw a "Square" ----
+            MoveL Offs(pP2_Work1,0,0,50),vMid,z20,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL pP2_Work1,vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,0,-60,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-60,-60,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work1,-60,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL pP2_Work1,vWork,fine,tPen\WObj:=wobj1_Station;
+            !---- Draw a "Circle" ----
+            MoveL Offs(pP2_Work2,0,0,30),vMid,z20,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL pP2_Work2,vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work2,0,-60,0),Offs(pP2_Work2,-60,-60,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work2,-60,0,0),pP2_Work2,vWork,fine,tPen\WObj:=wobj1_Station;
+            !---- Draw a "Triangle" ----
+            MoveL Offs(pP2_Work3,10,0,30),vMid,z20,tPen\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL Offs(pP2_Work3,10,0,0),vSlow,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,10,-60,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,-50,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work3,10,0,0),vWork,fine,tPen\WObj:=wobj1_Station;
+            MoveL pP2_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission4: Place product
+        IF bP2_Permis4 THEN
+            MoveL Offs(pP2_Work4,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            !Update Position Matlab
+            rToolCheck "Gripper_ON";
+            MoveL pP2_Work4,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP2_Work4,0,0,50),vWork,z20,tGripper\WObj:=wobj1_Station;
+            MoveJ pP2_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission5: Tracing the drawings
+        IF bP2_Permis5 THEN
+            !Tracing a "Square"
+            !---- Draw a "Square" ----
+            MoveL Offs(pP2_Work6,0,0,50),vMid,z20,tTeachingTip\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL pP2_Work6,vSlow,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work6,0,-60,0),vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work6,-60,-60,0),vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work6,-60,0,0),vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveL pP2_Work6,vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            !---- Draw a "Circle" ----
+            MoveL Offs(pP2_Work7,0,0,30),vMid,z20,tTeachingTip\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL pP2_Work7,vSlow,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work7,0,-60,0),Offs(pP2_Work7,-60,-60,0),vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveC Offs(pP2_Work7,-60,0,0),pP2_Work7,vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            !---- Draw a "Triangle" ----
+            MoveL Offs(pP2_Work8,0,0,30),vMid,z20,tTeachingTip\WObj:=wobj1_Station;
+            !Update Position Matlab
+            MoveL pP2_Work8,vSlow,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work8,0,-60,0),vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveL Offs(pP2_Work8,-60,0,0),vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveL pP2_Work8,vWork,fine,tTeachingTip\WObj:=wobj1_Station;
+            MoveL pP2_Wait,vMid,fine,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- END process
+        GOTO_P2_END:
+        MoveL pP2_Wait,vMid,fine,tGripper\WObj:=wobj1_Station;
+        MoveL pP2_Appr,vFast,fine,tGripper\WObj:=wobj1_Station;
+        nRB_Position:=200;
+        TPWrite "P2: RB finish P2";
+        nStep:=nStep+1;
+        bP2_Condition:=FALSE;
+    ENDPROC
+
+    PROC rP2_GoToP2()
+        !*** Robot move to P2 Approach position
+        IF (nRB_Position=10) THEN
+            ! From Home
+            MoveL pHome,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=100) THEN
+            ! From P1
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=200) THEN
+            ! From P2
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=300) THEN
+            ! From P3
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=400) THEN
+            ! From P4
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=500) THEN
+            ! From P5
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=600) THEN
+            ! From P6
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSE
+            ! Robot out of zone
+            TPWrite "nRB_Position Wrong";
+            StopMove;
+        ENDIF
+        ! Update RB Position
+        nRB_Position:=200;
+    ENDPROC
+
+    PROC rP3_RunP3()
+        !--Robot work at Process 3
+        TPWrite "P3: RB goto P3";
+        !--Move to P3
+        rP3_GoToP3;
+        MoveL pP3_Wait1,vMid,z20,tGripper\WObj:=wobj1_Station;
+        !--Wait Permision
+        WaitUntil bSkipProcess OR bP3_Permis1 OR bP3_Permis2;
+        !-- Skip process
+        IF bSkipProcess THEN
+            TPWrite "P3: Skip P3";
+            GOTO GOTO_P3_END;
+        ENDIF
+        !-- Mission1: Place and pick product
+        IF bP3_Permis1 THEN
+            MoveL Offs(pP3_Work1,0,0,20),vMid,z20,tGripper\WObj:=wobj1_Station;
+            !Update Position Matlab
+            rToolCheck "Gripper_ON";
+            MoveL pP3_Work1,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_OFF";
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            !Update Position Matlab
+        ENDIF
+
+        !-- END process
+        GOTO_P3_END:
+        MoveL pP3_Appr,vFast,fine,tGripper\WObj:=wobj1_Station;
+        nRB_Position:=300;
+        TPWrite "P3: RB finish P3";
+        nStep:=nStep+1;
+        bP3_Condition:=FALSE;
+    ENDPROC
+
+    PROC rP3_GoToP3()
+        !*** Robot move to P3 Approach position
+        IF (nRB_Position=10) THEN
+            ! From Home
+            MoveL pHome,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=100) THEN
+            ! From P1
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=200) THEN
+            ! From P2
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=300) THEN
+            ! From P3
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=400) THEN
+            ! From P4
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=500) THEN
+            ! From P5
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=600) THEN
+            ! From P6
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSE
+            ! Robot out of zone
+            TPWrite "nRB_Position Wrong";
+            StopMove;
+        ENDIF
+        ! Update RB Position
+        nRB_Position:=300;
+    ENDPROC
+
+    PROC rP4_RunP4()
+        !--Robot work at Process 4
+        TPWrite "P4: RB goto P4";
+        !--Move to P4
+        rP4_GoToP4;
+        MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        !--Wait Permision
+        !-- Skip process
+        IF bSkipProcess=TRUE THEN
+            TPWrite "P4: Skip P4";
+            GOTO GOTO_P4_END;
+        ENDIF
+        !-- Mission1: Pick product
+        IF bP4_Permis1=TRUE THEN
+            MoveJ Offs(pP4_Work1,0,0,100),vSlow,z20,tGripper\WObj:=wobj3_PartFeeder;
+            rToolCheck "Gripper_OFF";
+            MoveL pP4_Work1,vSlow,fine,tGripper\WObj:=wobj3_PartFeeder;
+            rTool "Gripper_ON";
+            rToolCheck "Gripper_ON";
+            MoveJ Offs(pP4_Work1,0,0,50),vSlow,z20,tGripper\WObj:=wobj3_PartFeeder;
+            MoveJ pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission2: Pick and Place product
+        IF bP4_Permis2=TRUE THEN
+            FOR i FROM 1 TO 10 DO
+                MoveJ Offs(pP4_Work1,0,0,60),vSlow,z20,tGripper\WObj:=wobj3_PartFeeder;
+                rToolCheck "Gripper_OFF";
+                MoveL pP4_Work1,vSlow,fine,tGripper\WObj:=wobj3_PartFeeder;
+                rTool "Gripper_ON";
+                rToolCheck "Gripper_ON";
+                MoveJ Offs(pP4_Work1,0,0,80),vSlow,z20,tGripper\WObj:=wobj3_PartFeeder;
+                MoveJ Offs(pP4_Work2,0,0,80),vSlow,z20,tGripper\WObj:=wobj3_PartFeeder;
+                rToolCheck "Gripper_ON";
+                MoveL pP4_Work2,vSlow,fine,tGripper\WObj:=wobj3_PartFeeder;
+                rTool "Gripper_OFF";
+                rToolCheck "Gripper_OFF";
+                MoveL Offs(pP4_Work2,0,0,60),vSlow,z20,tGripper\WObj:=wobj3_PartFeeder;
+            ENDFOR
+            MoveJ pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+
+        ENDIF
+        !-- END process
+        GOTO_P4_END:
+        MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        MoveL pP4_Appr,vSlow,z20,tGripper\WObj:=wobj1_Station;
+        nRB_Position:=400;
+        TPWrite "P4: RB finish P4";
+        nStep:=nStep+1;
+        bP4_Condition:=FALSE;
+    ENDPROC
+
+    PROC rP4_GoToP4()
+        !*** Robot move to P4 Approach position
+        IF (nRB_Position=10) THEN
+            ! From Home
+            MoveL pHome,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=100) THEN
+            ! From P1
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=200) THEN
+            ! From P2
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=300) THEN
+            ! From P3
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=400) THEN
+            ! From P4
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=500) THEN
+            ! From P5
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=600) THEN
+            ! From P6
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSE
+            ! Robot out of zone
+            TPWrite "nRB_Position Wrong";
+            StopMove;
+        ENDIF
+        ! Update RB Position
+        nRB_Position:=400;
+    ENDPROC
+
+    PROC rP5_RunP5()
+        !--Robot work at Process 5
+        TPWrite "P5: RB goto P5";
+        !--Move to P5
+        rP5_GoToP5;
+        pos8:=CPos(\Tool:=tool0\WObj:=wobj0);
+        SocketSend client,\str:=ValtoStr(pos8)+"@";
+        MoveL pP5_Wait,vMid,z20,tTeachingTip\WObj:=wobj1_Station;
+        pos9:=CPos(\Tool:=tool0\WObj:=wobj0);
+        SocketSend client,\str:=ValtoStr(pos9)+"@";
+        !--Wait Permision
+        WaitUntil bSkipProcess OR bP5_Permis1 OR bP5_Permis2 OR bP5_Permis3;
+        !-- Skip process
+        IF bSkipProcess THEN
+            TPWrite "P5: Skip P5";
+            GOTO GOTO_P5_END;
+        ENDIF
+        !-- Mission1: Draw a "Circle"
+        IF bP5_Permis1 THEN
+            MoveL Offs(pP5_Work1,0,0,30),vSlow,z20,tTeachingTip\WObj:=wobj2_PartTray;
+            !Update Position Matlab
+            MoveL pP5_Work1,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            pos10:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos10)+"@";
+            MoveC pP5_Work2,pP5_Work3,vSlow,z10,tTeachingTip\WObj:=wobj2_PartTray;
+            pos11:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos11)+"@";
+            MoveC pP5_Work4,pP5_Work1,vSlow,z10,tTeachingTip\WObj:=wobj2_PartTray;
+            pos12:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos12)+"@";
+            MoveL pP5_Wait,vMid,fine,tTeachingTip\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission2: Draw a "Rhombus"
+        IF bP5_Permis2 THEN
+            MoveL Offs(pP5_Work1,0,0,20),vSlow,z20,tTeachingTip\WObj:=wobj2_PartTray;
+            pos13:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos13)+"@";
+            !Update Position Matlab
+            MoveL pP5_Work1,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            pos14:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos14)+"@";
+            MoveL pP5_Work2,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            MoveL pP5_Work3,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            pos15:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos15)+"@";
+            MoveL pP5_Work4,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            MoveL pP5_Work1,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            pos16:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos16)+"@";
+            MoveL pP5_Wait,vMid,fine,tTeachingTip\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission3: Draw a "Square"
+        IF bP5_Permis3 THEN
+            MoveL Offs(pP5_Work5,0,0,20),vSlow,z20,tTeachingTip\WObj:=wobj2_PartTray;
+            !Update Position Matlab
+            MoveL pP5_Work5,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            pos17:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos17)+"@";
+            MoveL pP5_Work6,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            MoveL pP5_Work7,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            MoveL pP5_Work8,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            pos18:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos18)+"@";
+            MoveL pP5_Work5,vSlow,fine,tTeachingTip\WObj:=wobj2_PartTray;
+            MoveL pP5_Wait,vMid,z20,tTeachingTip\WObj:=wobj1_Station;
+            pos19:=CPos(\Tool:=tool0\WObj:=wobj0);
+            SocketSend client,\str:=ValtoStr(pos19)+"@";
+        ENDIF
+        !-- END process
+        GOTO_P5_END:
+        MoveL pP5_Wait,vMid,z20,tTeachingTip\WObj:=wobj1_Station;
+        MoveL pP5_Appr,vSlow,z20,tGripper\WObj:=wobj1_Station;
+        nRB_Position:=500;
+        pos20:=CPos(\Tool:=tool0\WObj:=wobj0);
+        SocketSend client,\str:=ValtoStr(pos20)+"@";
+        TPWrite "P5: RB finish P5";
+        nStep:=nStep+1;
+        bP5_Condition:=FALSE;
+    ENDPROC
+
+    PROC rP5_GoToP5()
+        !*** Robot move to P3 Approach position
+        IF (nRB_Position=10) THEN
+            ! From Home
+            MoveL pHome,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=100) THEN
+            ! From P1
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=200) THEN
+            ! From P2
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=300) THEN
+            ! From P3
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=400) THEN
+            ! From P4
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=500) THEN
+            ! From P5
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=600) THEN
+            ! From P6
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSE
+            ! Robot out of zone
+            TPWrite "nRB_Position Wrong";
+            StopMove;
+        ENDIF
+        ! Update RB Position
+        nRB_Position:=500;
+    ENDPROC
+
+    PROC rP6_RunP6()
+        !--Robot work at Process 6
+        TPWrite "P6: RB goto P6";
+        !--Move to P6
+        rP6_GoToP6;
+        MoveL pP6_Wait,vMid,fine,tGripper\WObj:=wobj1_Station;
+        !--Wait Permision
+        WaitUntil bSkipProcess OR bP6_Permis1 OR bP6_Permis2 OR bP6_Permis3;
+        !-- Skip process
+        IF bSkipProcess THEN
+            TPWrite "P6: Skip P6";
+            GOTO GOTO_P6_END;
+        ENDIF
+        !-- Mission1: Pick and Place Circle Block
+        IF bP6_Permis1 THEN
+            MoveL Offs(pP6_Work2{1},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_OFF";
+            MoveL pP6_Work2{1},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_ON";
+            rToolCheck "Gripper_ON";
+            MoveL Offs(pP6_Work2{1},0,0,150),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL Offs(pP6_Work2{4},0,0,150),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL Offs(pP6_Work2{4},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{4},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{4},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- Mission2: Place Square Block
+        IF bP6_Permis2 THEN
+            MoveL Offs(pP6_Work1{nWork_Position},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{nWork_Position},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{nWork_Position},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        ENDIF
+        !-- END process
+        GOTO_P6_END:
+        MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        MoveL pP6_Appr,vSlow,z20,tGripper\WObj:=wobj1_Station;
+        nRB_Position:=600;
+        TPWrite "P6: RB finish P6";
+        nStep:=nStep+1;
+        bP6_Condition:=FALSE;
+    ENDPROC
+
+    PROC rP6_GoToP6()
+        !*** Robot move to P3 Approach position
+        IF (nRB_Position=10) THEN
+            ! From Home
+            MoveL pHome,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=100) THEN
+            ! From P1
+            MoveL pP1_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=200) THEN
+            ! From P2
+            MoveL pP2_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=300) THEN
+            ! From P3
+            MoveL pP3_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=400) THEN
+            ! From P4
+            MoveL pP4_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=500) THEN
+            ! From P5
+            MoveL pP5_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSEIF (nRB_Position=600) THEN
+            ! From P6
+            MoveL pP6_Appr,vMid,z150,tGripper\WObj:=wobj1_Station;
+        ELSE
+            ! Robot out of zone
+            TPWrite "nRB_Position Wrong";
+            StopMove;
+        ENDIF
+        ! Update RB Position
+        nRB_Position:=600;
+    ENDPROC
+
+    !Bai 1
+    PROC EX_PROJECT1()
+        WHILE repeat DO
+            IF nStep=1 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis1:=TRUE;
+                stJobStat:="P1_ToolHolder: Pick tool!";
+            ELSEIF nStep=2 THEN
+                bP2_Condition:=TRUE;
+                bP2_Permis1:=TRUE;
+                stJobStat:="P2_WhiteBoard: Draw!";
+            ELSEIF nStep=3 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis3:=TRUE;
+                stJobStat:="P1_ToolHolder: Place tool!";
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 2
+    PROC EX_PROJECT2()
+        WHILE repeat DO
+            IF nStep=1 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis2:=TRUE;
+                stJobStat:="P1_ToolHolder: Pick tool!";
+            ELSEIF nStep=2 THEN
+                bP5_Condition:=TRUE;
+                bP5_Permis1:=TRUE;
+                bP5_Permis2:=TRUE;
+                bP5_Permis3:=TRUE;
+                stJobStat:="P5_PartTray: Draw!";
+            ELSEIF nStep=3 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis4:=TRUE;
+                stJobStat:="P1_ToolHolder: Place tool!";
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 3
+    PROC EX_PROJECT3()
+        WHILE repeat DO
+            !stJobDecrip:="Using Gripper to change the position of square (or round block)  on Part Feeder.";
+            IF nStep=1 THEN
+                bP4_Condition:=TRUE;
+                bP4_Permis2:=TRUE;
+                stJobStat:="P4_PartFeeder:Pick and Place block!";
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 4
+    PROC EX_PROJECT4()
+        WHILE repeat DO
+            !stJobDecrip:="Using Gripper to pick up the square (or round block) on the Part Feeder and"+" release it at the specified position on Part Tray.";
+            IF nStep=1 THEN
+                bP4_Condition:=TRUE;
+                bP4_Permis1:=TRUE;
+                stJobStat:="P4_PartFeeder: Pick square block!";
+            ELSEIF nStep=2 THEN
+                bP6_Condition:=TRUE;
+                nWork_Position:=nWork_Position+1;
+                bP6_Permis2:=TRUE;
+                stJobStat:="P6_PartTray: Place square block!";
+            ELSEIF nStep=3 and nWork_Position<8 THEN
+                nStep:=1;
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                nWork_Position:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 5
+    PROC EX_PROJECT5()
+        WHILE repeat DO
+            !stJobDecrip:="Using Gripperr to pick up a square (or round block) "+"from the current cell to another cell on the Part Tray.";
+            IF nStep=1 THEN
+                bP6_Condition:=TRUE;
+                nWork_Position:=nWork_Position+1;
+                bP6_Permis1:=TRUE;
+                stJobStat:="P6_PartTray: Pick and place block!";
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nWork_Position:=0;
+                nExercise:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 6
+    PROC EX_PROJECT6()
+        WHILE repeat DO
+            !stJobDecrip:="Using Gripper to pick up the square (or round) block on Part Feeder"+" and release it inside pre-drawn drawings on the White board.";
+            IF nStep=1 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis1:=TRUE;
+                stJobStat:="P1_ToolHolder: Pick tool!";
+            ELSEIF nStep=2 THEN
+                bP2_Condition:=TRUE;
+                bP2_Permis3:=TRUE;
+                stJobStat:="P2_WhiteBoard: Draw!";
+            ELSEIF nStep=3 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis3:=TRUE;
+                stJobStat:="P1_ToolHolder: Place tool!";
+            ELSEIF nStep=4 THEN
+                bP4_Condition:=TRUE;
+                bP4_Permis1:=TRUE;
+                stJobStat:="P4_PartFeeder: Pick square block!";
+            ELSEIF nStep=5 THEN
+                bP2_Condition:=TRUE;
+                pP2_Work4:=pP2_Work5;
+                bP2_Permis4:=TRUE;
+                stJobStat:="P2_WhiteBoard: Place square block!";
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 7
+    PROC EX_PROJECT7()
+        WHILE repeat DO
+            !stJobDecrip:="Using TCP to follow the pre-drawn drawings on the White Board.";
+            IF nStep=1 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis1:=TRUE;
+                stJobStat:="P1_ToolHolder: Pick tool!";
+            ELSEIF nStep=2 THEN
+                bP2_Condition:=TRUE;
+                bP2_Permis3:=TRUE;
+                stJobStat:="P2_WhiteBoard: Draw!";
+            ELSEIF nStep=3 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis3:=TRUE;
+                stJobStat:="P1_ToolHolder: Place tool!";
+            ELSEIF nStep=4 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis2:=TRUE;
+                stJobStat:="P1_ToolHolder: Pick tool!";
+            ELSEIF nStep=5 THEN
+                bP2_Condition:=TRUE;
+                bP2_Permis5:=TRUE;
+                stJobStat:="P2_WhiteBoard: Draw!";
+            ELSEIF nStep=6 THEN
+                bP1_Condition:=TRUE;
+                bP1_Permis4:=TRUE;
+                stJobStat:="P1_ToolHolder: Place tool!";
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 8
+    PROC EX_PROJECT8()
+        WHILE repeat DO
+            !stJobDecrip:="Using Gripper to pick up 2 squares (or circles)"+" block and stack them on the White board.";
+            IF nStep=1 THEN
+                bP4_Condition:=TRUE;
+                bP4_Permis1:=TRUE;
+                stJobStat:="P4_PartFeeder: Pick square block!";
+            ELSEIF nStep=2 THEN
+                bP2_Condition:=TRUE;
+                pP2_Work4:=pP2_Work5;
+                bP2_Permis4:=TRUE;
+                stJobStat:="P2_WhiteBoard: Place square block!";
+            ELSEIF nStep=3 THEN
+                bP4_Condition:=TRUE;
+                bP4_Permis1:=TRUE;
+                stJobStat:="P4_PartFeeder: Pick square block!";
+            ELSEIF nStep=4 THEN
+                bP2_Condition:=TRUE;
+                pP2_Work4:=Offs(pP2_Work5,0,0,30);
+                bP2_Permis4:=TRUE;
+                stJobStat:="P2_WhiteBoard: Place square block!";
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 9
+    PROC EX_PROJECT9()
+        WHILE repeat DO
+            !stJobDecrip:="Using Gripper to pick up 2 squares (or circles)"+" and place them side by side on the White board.";
+            IF nStep=1 THEN
+                bP4_Condition:=TRUE;
+                bP4_Permis1:=TRUE;
+                stJobStat:="P4_PartFeeder: Pick square block!";
+            ELSEIF nStep=2 THEN
+                bP2_Condition:=TRUE;
+                pP2_Work4:=pP2_Work5;
+                bP2_Permis4:=TRUE;
+                stJobStat:="P2_WhiteBoard: Place square block!";
+            ELSEIF nStep=3 THEN
+                bP4_Condition:=TRUE;
+                bP4_Permis1:=TRUE;
+                stJobStat:="P4_PartFeeder: Pick square block!";
+            ELSEIF nStep=4 THEN
+                bP2_Condition:=TRUE;
+                pP2_Work4:=Offs(pP2_Work5,-35,0,0);
+                bP2_Permis4:=TRUE;
+                stJobStat:="P2_WhiteBoard: Place square block!";
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                stJobStat:="Job done!";
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Bai 10
+    PROC EX_PROJECT10()
+        WHILE repeat DO
+            !stJobDecrip:="Using  Gripper to pick up squares (or round blocks) on the"+" conveyor and place them in the specified position on Part Tray";
+            IF nStep=1 THEN
+                bP4_Condition:=TRUE;
+                bP4_Permis1:=TRUE;
+                stJobStat:="P4_PartFeeder: Pick square block!";
+                rTool("Holding_OFF");
+                Set do09_MotorFoward;
+            ELSEIF nStep=2 THEN
+                bP3_Condition:=TRUE;
+                bP3_Permis1:=TRUE;
+                stJobStat:="P3_Conveyor: Place and pick square block!";
+            ELSEIF nStep=3 THEN
+                bP6_Condition:=TRUE;
+                nWork_Position:=nWork_Position+1;
+                bP6_Permis2:=TRUE;
+                stJobStat:="P6_PartTray: Place square block!";
+            ELSEIF nStep=4 and nWork_Position<8 THEN
+                nStep:=1;
+            ELSE
+                bStartJob:=FALSE;
+                nStep:=1;
+                nExercise:=0;
+                stJobStat:="Job done!";
+                nWork_Position:=0;
+                Reset do09_MotorFoward;
+            ENDIF
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    !Chon 1 trong 10 bai
+    PROC EX_PROJECT()
+        IF flag=TO_PAINT THEN
+            EX_PAINT;
+        ENDIF
+        IF flag=TO_INTRODUCE THEN
+            EX_INTRODUCING;
+        ENDIF
+        IF flag=Project1 THEN
+            EX_PROJECT1;
+        ENDIF
+        IF flag=Project2 THEN
+            EX_PROJECT2;
+        ENDIF
+        IF flag=Project3 THEN
+            EX_PROJECT3;
+        ENDIF
+        IF flag=Project4 THEN
+            EX_PROJECT4;
+        ENDIF
+        IF flag=Project5 THEN
+            EX_PROJECT5;
+        ENDIF
+        IF flag=Project6 THEN
+            EX_PROJECT6;
+        ENDIF
+        IF flag=Project7 THEN
+            EX_PROJECT7;
+        ENDIF
+        IF flag=Project8 THEN
+            EX_PROJECT8;
+        ENDIF
+        IF flag=Project9 THEN
+            EX_PROJECT9;
+        ENDIF
+        IF flag=Project10 THEN
+            EX_PROJECT10;
+        ENDIF
+    ENDPROC
+
+    ! Thuc hien rP*_RunP*;
+    PROC WORK()
+        IF bStartJob=TRUE THEN
+            IF bP1_Condition=TRUE THEN
+                ! Run Process 1
+                rP1_RunP1;
+            ENDIF
+            IF bP2_Condition=TRUE THEN
+                ! Run Process 2
+                rP2_RunP2;
+            ENDIF
+            IF bP3_Condition=TRUE THEN
+                ! Run Process 3
+                rP3_RunP3;
+            ENDIF
+            IF bP4_Condition=TRUE THEN
+                ! Run Process 4
+                rP4_RunP4;
+            ENDIF
+            IF bP5_Condition=TRUE THEN
+                ! Run Process 5
+                rP5_RunP5;
+            ENDIF
+            IF bP6_Condition=TRUE THEN
+                ! Run Process 6
+                rP6_RunP6;
+            ENDIF
+        ENDIF
+    ENDPROC
+
+    !----- Simulation -----
+    !    PROC Function_A()
+    !        MoveJ Target_A1,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_A2,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_A3,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_A4,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_A5,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_10,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_20,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_A2,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_A4,v200,fine,Pen_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Function_B()
+    !        MoveJ Target_B1,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_B3,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_B4,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveC Target_B5,Target_B6,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_B2,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_B1,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Target_B8,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveC Target_B7,Target_B6,v200,fine,Pen_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Paint()
+    !        MoveJ R1,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL R2,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL R3,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL R4,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL R1,v200,fine,Pen_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC PickBox()
+    !        MoveJ Offs(pPickProduct6,0,0,50),v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ pPickProduct6,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do02_GripperON;
+    !        Reset do03_GripperOFF;
+    !        MoveJ Target_206,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        WaitTime 0.5;
+    !        MoveL pHome,v500,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveJ Target_306,v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlaceProduct6,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do02_GripperON;
+    !        Set do03_GripperOFF;
+    !        WaitTime 0.5;
+    !    ENDPROC
+
+    !    PROC PickBox2()
+    !        MoveJ Offs(pPickProduct,0,0,50),v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ pPickProduct,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do02_GripperON;
+    !        Reset do03_GripperOFF;
+    !        MoveJ Target_20,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        WaitTime 0.5;
+    !        MoveL pHome,v500,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveJ Target_30,v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlaceProduct,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do02_GripperON;
+    !        Set do03_GripperOFF;
+    !        WaitTime 0.5;
+
+    !        MoveJ Offs(pPickProduct9,0,0,50),v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ pPickProduct9,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do04_GipperON;
+    !        Reset do05_GipperOFF;
+    !        MoveJ Target_209,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        WaitTime 0.5;
+    !        MoveL pHome,v500,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveJ Target_309,v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlaceProduct9,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do04_GipperON;
+    !        Set do05_GipperOFF;
+    !        WaitTime 0.5;
+
+    !    ENDPROC
+
+    !    PROC Bai1_Simu()
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL Offs(pPickPen,0,0,50),v300,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPickPen,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do00_GripperON;
+    !        Reset do01_GripperOFF;
+    !        MoveL Offs(pPickPen,0,0,100),v300,fine,Gripper_tool\WObj:=wobj0;
+    !        Function_A;
+    !        MoveL Target_30,v200,fine,Pen_tool\WObj:=wobj0;
+    !        Function_B;
+    !        MoveL Offs(pPlacePen,0,0,100),v300,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlacePen,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do00_GripperON;
+    !        Set do01_GripperOFF;
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Bai3_Simu()
+    !        MoveL pHome,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPickProduct,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do00_GripperON;
+    !        Reset do01_GripperOFF;
+    !        Waittime 0.5;
+    !        MoveL Target_103,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL Target_203,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlaceProduct,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do00_GripperON;
+    !        Set do01_GripperOFF;
+    !        Waittime 0.5;
+    !        MoveL pHome,v100,fine,Gripper_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Bai4_Simu()
+    !        MoveL pHome,v500,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPick4,v300,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do00_GripperON;
+    !        Reset do01_GripperOff;
+    !        WaitTime 0.5;
+    !        MoveL Target_104,v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ pPosition4,v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ pPlaceBox4,v300,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do01_GripperOFF;
+    !        Set do01_GripperOff;
+    !        WaitTime 0.5;
+    !        MoveJ pHome,v300,z100,Gripper_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Bai5_Simu()
+    !        MoveJ pHome,v200,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ Target_105,v200,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ pPick,v200,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do00_GripperON;
+    !        Reset do01_GripperOFF;
+    !        Waittime 0.5;
+    !        MoveJ Target_105,v200,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ Target_205,v200,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlace,v200,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do00_GripperON;
+    !        Set do01_GripperOFF;
+    !        Waittime 0.5;
+    !        MoveJ Target_205,v200,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ Target_105,v200,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveJ pHome,v200,fine,Gripper_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Bai6_Simu()
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL Offs(pPickPen6,0,0,50),v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPickPen6,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do00_GripperON;
+    !        Reset do01_GripperOFF;
+    !        MoveL Target_106,v100,fine,Pen_tool\WObj:=wobj0;
+    !        Paint;
+    !        MoveL Offs(pPlacePen6,0,0,100),v300,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlacePen6,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do00_GripperON;
+    !        Set do01_GripperOFF;
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !        PickBox;
+    !        MoveJ pHome,v600,z100,Gripper_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Bai7_Simu()
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL Offs(pPickPen,0,0,50),v300,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPickPen,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do00_GripperON;
+    !        Reset do01_GripperOFF;
+    !        MoveL Offs(pPickPen,0,0,100),v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL R1,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL R2,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL R3,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL R4,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL R1,v200,fine,Pen_tool\WObj:=wobj0;
+    !        MoveL Offs(pPlacePen,0,0,100),v300,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlacePen,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do00_GripperON;
+    !        Set do01_GripperOFF;
+
+    !        !Tool Teaching
+    !        MoveL Offs(pPickTCP,0,0,50),v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPickTCP,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do02_GripperON;
+    !        Reset do03_GripperOFF;
+    !        MoveL Offs(pPickTCP,0,0,100),v300,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL R1,v200,fine,Tool_Teaching\WObj:=wobj0;
+    !        MoveL R2,v200,fine,Tool_Teaching\WObj:=wobj0;
+    !        MoveL R3,v200,fine,Tool_Teaching\WObj:=wobj0;
+    !        MoveL R4,v200,fine,Tool_Teaching\WObj:=wobj0;
+    !        MoveL R1,v200,fine,Tool_Teaching\WObj:=wobj0;
+    !        MoveL Offs(pPickTCP,0,0,100),v300,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlaceTCP,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do02_GripperON;
+    !        Set do03_GripperOFF;
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Bai8_Simu()
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL Offs(pPickPen,0,0,50),v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPickPen,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do00_GripperON;
+    !        Reset do01_GripperOFF;
+    !        MoveL Target_10,v100,fine,Pen_tool\WObj:=wobj0;
+    !        Paint;
+    !        MoveL Offs(pPlacePen,0,0,100),v300,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlacePen,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do00_GripperON;
+    !        Set do01_GripperOFF;
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !        PickBox;
+    !        MoveJ pHome,v600,z100,Gripper_tool\WObj:=wobj0;
+    !    ENDPROC
+
+    !    PROC Bai9_Simu()
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL Offs(pPickPen,0,0,50),v500,fine,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPickPen,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Set do00_GripperON;
+    !        Reset do01_GripperOFF;
+    !        MoveL Target_10,v100,fine,Pen_tool\WObj:=wobj0;
+    !        Paint;
+    !        MoveL Offs(pPlacePen,0,0,100),v300,z100,Gripper_tool\WObj:=wobj0;
+    !        MoveL pPlacePen,v100,fine,Gripper_tool\WObj:=wobj0;
+    !        Reset do00_GripperON;
+    !        Set do01_GripperOFF;
+    !        MoveL pHome,v500,fine,Gripper_tool\WObj:=wobj0;
+    !        PickBox;
+    !        MoveJ pHome,v600,z100,Gripper_tool\WObj:=wobj0;
+    !    ENDPROC
+
+
+    PROC RECTANGLEA()
+        !Matrix
+        rP4_GoToP4;
+        MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+        PickPartFeeder;
+        FOR x FROM 0 TO 1 DO
+            FOR y FROM 0 TO 3 DO
+                PlacePointvar:=Offs(pP6_Work1{nWork_Position},x*(-60),y*(-60),0);
+                moveJ PlacePointvar,v50,fine,tGripper\WObj:=wobj2_PartTray;
+                PlaceBlock;
+            ENDFOR
+        ENDFOR
+
+        !Vector
+        !        FOR x FROM 0 TO 1 DO
+        !            PlacePointvar:=Offs(Target_20,x*(-30),0,0);
+        !            array;
+        !        ENDFOR
+    ENDPROC
+
+    PROC PickPartFeeder()
+        MoveJ Offs(pP4_Work1,0,0,100),vSlow,z20,tGripper\WObj:=wobj3_PartFeeder;
+        rToolCheck "Gripper_OFF";
+        MoveL pP4_Work1,vSlow,fine,tGripper\WObj:=wobj3_PartFeeder;
+        rTool "Gripper_ON";
+        rToolCheck "Gripper_ON";
+        MoveJ Offs(pP4_Work1,0,0,50),vSlow,z20,tGripper\WObj:=wobj3_PartFeeder;
+        MoveJ pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+    ENDPROC
+
+    PROC PlaceBlock()
+        MoveL Offs(pP6_Work1{nWork_Position},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+        rToolCheck "Gripper_ON";
+        MoveL pP6_Work1{nWork_Position},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+        rTool "Gripper_OFF";
+        rToolCheck "Gripper_OFF";
+        MoveL Offs(pP6_Work1{nWork_Position},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+        MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+    ENDPROC
+
+    PROC REC1()
+        WHILE repeat DO
+            rP4_GoToP4;
+            MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            PickPartFeeder;
+            MoveL Offs(pP6_Work1{1},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{1},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{1},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+
+    ENDPROC
+
+    PROC REC2()
+        WHILE repeat DO
+            rP4_GoToP4;
+            MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            PickPartFeeder;
+            MoveL Offs(pP6_Work1{2},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{2},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{2},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+
+    ENDPROC
+
+    PROC REC3()
+        WHILE repeat DO
+            rP4_GoToP4;
+            MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            PickPartFeeder;
+            MoveL Offs(pP6_Work1{3},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{3},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{3},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+
+    ENDPROC
+
+    PROC REC4()
+        WHILE repeat DO
+            rP4_GoToP4;
+            MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            PickPartFeeder;
+            MoveL Offs(pP6_Work1{4},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{4},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{4},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+
+    ENDPROC
+
+    PROC REC5()
+        WHILE repeat DO
+            rP4_GoToP4;
+            MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            PickPartFeeder;
+            MoveL Offs(pP6_Work1{5},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{5},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{5},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+
+    ENDPROC
+
+    PROC REC6()
+        WHILE repeat DO
+            rP4_GoToP4;
+            MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            PickPartFeeder;
+            MoveL Offs(pP6_Work1{6},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{6},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{6},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+
+    ENDPROC
+
+    PROC REC7()
+        WHILE repeat DO
+            rP4_GoToP4;
+            MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            PickPartFeeder;
+            MoveL Offs(pP6_Work1{7},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{7},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{7},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+
+    ENDPROC
+    
+    PROC REC8()
+        WHILE repeat DO
+            rP4_GoToP4;
+            MoveL pP4_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            PickPartFeeder;
+            MoveL Offs(pP6_Work1{8},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work1{8},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work1{8},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+
+    ENDPROC
+
+    PROC WORK_PARTTAY()
+        IF box=Rectangle1 THEN
+            REC1;
+        ENDIF
+        IF box=Rectangle2 THEN
+            REC2;
+        ENDIF
+        IF box=Rectangle3 THEN
+            REC3;
+        ENDIF
+        IF box=Rectangle4 THEN
+            REC4;
+        ENDIF
+        IF box=Rectangle5 THEN
+            REC5;
+        ENDIF
+        IF box=Rectangle6 THEN
+            REC6;
+        ENDIF
+        IF box=Rectangle7 THEN
+            REC7;
+        ENDIF
+        IF box=Rectangle8 THEN
+            REC8;
+        ENDIF
+        IF box=Circle1 THEN
+            RB1;
+        ENDIF
+        IF box=Circle2 THEN
+            RB2;
+        ENDIF
+        IF box=Circle3 THEN
+            RB3;
+        ENDIF
+        IF box=Circle4 THEN
+            RB4;
+        ENDIF
+        IF box=Circle5 THEN
+            RB5;
+        ENDIF
+        IF box=Circle6 THEN
+            RB6;
+        ENDIF
+        IF box=Circle7 THEN
+            RB7;
+        ENDIF
+        IF box=Circle8 THEN
+            RB8;
+        ENDIF
+    ENDPROC
+
+    PROC RB1()
+        WHILE repeat DO
+            Set do09_MotorFoward;
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP6_Work2{0},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{0},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{0},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    PROC RB2()
+        WHILE repeat DO
+            Set do09_MotorFoward;
+            
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP6_Work2{1},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{1},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{1},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    PROC RB3()
+        WHILE repeat DO
+            Set do09_MotorFoward;
+            
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP6_Work2{2},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{2},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{2},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    PROC RB4()
+        WHILE repeat DO
+            Set do09_MotorFoward;
+            
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP6_Work2{3},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{3},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{3},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    PROC RB5()
+        WHILE repeat DO
+            Set do09_MotorFoward;
+            
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP6_Work2{4},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{4},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{4},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    PROC RB6()
+        WHILE repeat DO
+            Set do09_MotorFoward;
+            
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP6_Work2{5},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{5},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{5},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    PROC RB7()
+        WHILE repeat DO
+            Set do09_MotorFoward;
+            
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP6_Work2{6},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{6},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{6},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    PROC RB8()
+        WHILE repeat DO
+            Set do09_MotorFoward;
+            
+            rCallTrapStop;
+            WaitUntil di08_PhotoSensor=0;
+            Waittime 0.5;
+            rToolCheck "Gripper_OFF";
+            rToolCheck "Holding_OFF";
+            rTool "Holding_ON";
+            rToolCheck "Holding_ON";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP3_Work1,0,0,80),vFast,z80,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait1,vFast,z200,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP3_Work2,0,0,80),vFast,z50,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Work2,vWork,fine,tGripper\WObj:=wobj1_Station;
+            rTool "Gripper_ON";
+            rTool "Holding_OFF";
+            ISleep intStop;
+            MoveL Offs(pP3_Work2,0,0,20),vSlow,z20,tGripper\WObj:=wobj1_Station;
+            MoveL pP3_Wait2,vMid,z20,tGripper\WObj:=wobj1_Station;
+            MoveL Offs(pP6_Work2{7},0,0,50),vSlow,z0,tGripper\WObj:=wobj2_PartTray;
+            rToolCheck "Gripper_ON";
+            MoveL pP6_Work2{7},vSlow,fine,tGripper\WObj:=wobj2_PartTray;
+            rTool "Gripper_OFF";
+            rToolCheck "Gripper_OFF";
+            MoveL Offs(pP6_Work2{7},0,0,80),vSlow,z20,tGripper\WObj:=wobj2_PartTray;
+            MoveL pP6_Wait,vMid,z20,tGripper\WObj:=wobj1_Station;
+            repeat:=FALSE;
+        ENDWHILE
+        repeat:=TRUE;
+    ENDPROC
+
+    ! main process
+    PROC main()
+        IF init()=TRUE THEN
+            !--Connect to MATLAB
+            SocketCreate server;
+            SocketBind server,"192.168.125.1",55000;
+            SocketListen server;
+            SocketAccept server,client;
+
+            !--Initialization
+            rInitial;
+            rHome;
+            !--Waiting System Ready
+            WaitUntil di00_SystemReady=1;
+            !--Loop
+            WHILE di00_SystemReady=1 DO
+                rResetCondition;
+                !TPErase;
+                WHILE flag>SHUT_DOWN DO
+                    bStartJob:=TRUE;
+                    EX_PROJECT;
+                    WORK;
+                ENDWHILE
+                WHILE box>SHUT_DOWN DO
+                    WORK_PARTTAY;
+                ENDWHILE
+            ENDWHILE
+            ! SingArea \Wrist - solvs the 'singularity' problem
+            ! set the TCP at the starting point
+            SocketClose server;
+            UnpackRawBytes data,5,message,\ASCII:=15;
+            SocketReceive client,\RawData:=data;
+            ! A kind of self-made event handler...
+        ENDIF
+    ENDPROC
+ENDMODULE
